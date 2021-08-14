@@ -1,7 +1,7 @@
 from django_cron import CronJobBase, Schedule
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
-from .models import video
+from .models import Video
 
 class YouTubeApiFetch(CronJobBase):
     RUN_EVERY_MINS = 10
@@ -24,10 +24,10 @@ class YouTubeApiFetch(CronJobBase):
 
         for item in response['items']:
             Video.objects.create(
-                video_id=item['id']['videoId']
-                channel_id=item['snippet']['channelId']
-                title=item['snippet']['title']
-                description=item['snippet']['description']
-                channel_title=item['snippet']['channelTitle']
+                video_id=item['id']['videoId'],
+                channel_id=item['snippet']['channelId'],
+                title=item['snippet']['title'],
+                description=item['snippet']['description'],
+                channel_title=item['snippet']['channelTitle'],
                 publish_time=item['snippet']['publishTime']
             )
