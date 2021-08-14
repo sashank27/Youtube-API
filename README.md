@@ -18,7 +18,7 @@ This project assumes you have a working python environment, which supports virtu
 * Start the cron job using `python manage.py runcrons`
 * Start the server on http://127.0.0.1:8080 using `python manage.py runserver`
 
-## Futuee Scope
+## Future Scope
 * Create a nice frontend to display the responses
 * Use Celery/Redis instead of django-cron to fetch the results
 
