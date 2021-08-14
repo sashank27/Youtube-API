@@ -20,7 +20,11 @@ This project assumes you have a working python environment, which supports virtu
 
 ## Future Scope
 * Create a nice frontend to display the responses
-* Use Celery/Redis instead of django-cron to fetch the results
+* Use Celery+Redis instead of django-cron to fetch the results[(WIP branch)](https://github.com/sashank27/Youtube-API/tree/celery_redis)
 
 ## Author
 * Sashank Mishra ([@sashank27](https://github.com/sashank27))
+
+## Screenshots
+
+[Link](https://github.com/sashank27/Youtube-API/tree/master/media)
