@@ -9,3 +9,21 @@ services:
       - .:/code
     ports:
       - "8000:8000"
+    depends_on:
+      - redis
+  redis:
+    image: redis:alpine
+  celery:
+    build: .
+    command: ['celery','-A','youtube_api','worker','-l','info']
+    volumes:
+      - .:/code
+    depends_on:
+      - redis
+  celery-beat:
+    build: .
+    command: ['celery','-A','youtube_api','beat','-l','info']
+    volumes:
+      - .:/code
+    depends_on:
+      - redis

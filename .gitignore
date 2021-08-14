@@ -30,3 +30,9 @@ $RECYCLE.BIN/
 .vscode/
 .history/
 *.code-workspace
+
+# celery beat schedule file
+celerybeat-schedule
+
+# Ignore redis binary dump (dump.rdb) files
+*.rdb
