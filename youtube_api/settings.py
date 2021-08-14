@@ -114,6 +114,10 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
+API_KEYS = ['AIzaSyAtuzByPkZeyCX9ZCtAYB0TdmsQqfsFlmY']
+
+CRON_RUN_FREQENCY_MINS = 10
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
