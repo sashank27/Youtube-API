@@ -114,8 +114,10 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
+# List of API keys to be used for async fetch
 API_KEYS = ['AIzaSyAtuzByPkZeyCX9ZCtAYB0TdmsQqfsFlmY']
 
+# Time interval between successive async fetch of query
 CRON_RUN_FREQENCY_MINS = 10
 
 # Internationalization

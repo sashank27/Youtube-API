@@ -18,11 +18,14 @@ class YouTubeApiFetch(CronJobBase):
         YOUTUBE_API_VERSION = 'v3'
         valid_resp = False
 
+        # If the db is empty, fetch all videos published from Jan 1,2021.
+        # If not, then fetch all the videos published between the current time and last fetch time interval
         if Video.objects.exists():
             last_request_time = datetime.now() - timedelta(minutes=RUN_EVERY_MINS)
         else:
             last_request_time = datetime(2021,1,1)
 
+        # Iterate over all the keys present in list to execute the query, if successfrom any one of them, break the loop
         for KEY in DEVELOPER_KEYS:
             try:
                 youtube = build(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION, developerKey=KEY)
